@@ -104,6 +104,12 @@ public class Fraction {
 		
 		return new Fraction( numerator, denominator ).trim();
 	}
+	
+	public Fraction division( Fraction divisor ) throws FractionException{
+		Fraction reciprocalValue = new Fraction( divisor.getDenominator(), divisor.getNumerator() );
+		
+		return multiplicat( reciprocalValue ).trim();
+	}
 		
 	@Override
 	public String toString(){
