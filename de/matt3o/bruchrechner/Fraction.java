@@ -85,7 +85,7 @@ public class Fraction {
 		return zahl1;
 	}
 	
-	public Fraction addition( Fraction summand2 ) throws MathException{
+	public Fraction addition( Fraction summand2 ) throws FractionException, MathException{
 		int numerator;
 		int denominator;
 		
@@ -93,6 +93,17 @@ public class Fraction {
 			numerator = summand2.getNumerator() + this.getNumerator();
 			denominator = this.getDenominator();
 			return new Fraction( numerator, denominator ).trim();
+		}
+		
+		throw new MathException( "Die beiden Nenner müssen gleich sein!" );
+	}
+	
+	public Fraction subtract( Fraction subtrahend ) throws FractionException, MathException{
+		if ( subtrahend.getDenominator() == this.getDenominator() ){
+			numerator = this.getNumerator() - subtrahend.getNumerator();
+			denominator = this.getDenominator();
+			
+			return new Fraction( numerator, denominator );
 		}
 		
 		throw new MathException( "Die beiden Nenner müssen gleich sein!" );
