@@ -1,6 +1,6 @@
 package de.matt3o.bruchrechner;
 
-import de.matt3o.bruchrechner.gui.Window;
+// import de.matt3o.bruchrechner.gui.Window;
 
 public class Run {
 	public static void main( String... args ){
