@@ -98,6 +98,13 @@ public class Fraction {
 		throw new MathException( "Die beiden Nenner müssen gleich sein!" );
 	}
 	
+	public Fraction multiplicat( Fraction multiplicand ) throws FractionException{
+		int numerator = multiplicand.getNumerator() * this.getNumerator();
+		int denominator = multiplicand.getDenominator() * this.getDenominator();
+		
+		return new Fraction( numerator, denominator ).trim();
+	}
+	
 	@Override
 	public String toString(){
 		return "Fraction: [" + numerator + "/" + denominator + "]";
