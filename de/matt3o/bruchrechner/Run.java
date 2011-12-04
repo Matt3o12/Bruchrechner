@@ -9,11 +9,11 @@ public class Run {
 		
 		
 		try {
-			Fraction b1 = new Fraction( 1, 3 );
-			Fraction b2 = new Fraction( 1, 3 );
+			Fraction b1 = new Fraction( 1, 2 );
+			Fraction b2 = new Fraction( 6, 4 );
 			
-			System.out.println( b1.addition( b2 ) );
-		} catch (FractionException e) {
+			System.out.println( b1.multiplicat( b2 ) );
+		} catch ( MathException e ) {
 			e.printStackTrace();
 		}
 	}
