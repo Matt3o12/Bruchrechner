@@ -70,8 +70,32 @@ public class Fraction {
 		return resul;
 	}
 	
-	public int addition( Fraction summand2 ) throws FractionException{
-		return getGGF( 3, 5);
+	public int getGGT( Fraction fraction2 ){		
+		int zahl1 = this.getDenominator();
+		int zahl2 = fraction2.getDenominator();
+		
+		while ( zahl2 != 0 ) {
+		   if ( zahl1 > zahl2 ) {
+			   zahl1 = zahl1 - zahl2;
+		   } else {
+			   zahl2 = zahl2 - zahl1;
+		   }
+		}
+		
+		return zahl1;
+	}
+	
+	public Fraction addition( Fraction summand2 ) throws MathException{
+		int numerator;
+		int denominator;
+		
+		if ( summand2.getDenominator() == this.getDenominator() ){
+			numerator = summand2.getNumerator() + this.getNumerator();
+			denominator = this.getDenominator();
+			return new Fraction( numerator, denominator ).trim();
+		}
+		
+		throw new MathException( "Die beiden Nenner müssen gleich sein!" );
 	}
 	
 	@Override
