@@ -1,11 +1,11 @@
 package de.matt3o.bruchrechner;
 
-// import de.matt3o.bruchrechner.gui.Window;
+import de.matt3o.bruchrechner.gui.Window;
 
 public class Run {
 	public static void main( String... args ){
 		Logger.getLogger();		
-//		new Window();
+		new Window();
 		
 		
 		try {
@@ -13,7 +13,7 @@ public class Run {
 			Fraction b2 = new Fraction( 1, 3 );
 			
 			System.out.println( b1.addition( b2 ) );
-		} catch (FractionException e) {
+		} catch ( MathException e) {
 			e.printStackTrace();
 		}
 	}
